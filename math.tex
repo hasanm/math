@@ -1,0 +1,98 @@
+\documentclass[12pt]{book}
+\usepackage{setspace}
+\usepackage{charter}
+\usepackage[T1]{fontenc}
+\usepackage{url}
+% \usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{pifont} 
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\usepackage{calc}
+
+\usepackage[hmargin=20mm,top=20mm, bottom=20mm]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{intersections,arrows,decorations.pathmorphing,backgrounds,positioning,fit,calc,matrix,3d,chains,petri,through,scopes,shadows,shapes.geometric}
+\usepackage{tikz-cd}
+% \usepackage[normalem]{ulem} % for Strike out. 
+\usepackage{soul} % For Strikethrough
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\code}{\texttt}
+\newcommand\T{\rule{0pt}{2.6ex}}
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
+\newcommand\Pb{\vspace{1.2ex}}
+\newtheorem{note}{Note}[section]
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem*{problem*}{Problem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\newcommand{\LL}{\mathcal{L}}
+
+% No Indent 
+\setlength\parindent{0pt}
+\title{Excercise: Linear Algebra\\
+\large{Stat 2780, Fall 2024}}
+\author{Mahmudul Hasan (hasan@uleth.ca)\\
+}
+\begin{document}
+% \input{ch-intro.tex}
+% \maketitle
+
+\chapter{Linear Algebra Done right}
+
+\section{Excercise : 3.D}
+
+\begin{problem*}
+  1. Suppose $T \in \LL(U,V)$ and $ S \in \LL(V,W)$ are both invertible
+  linear maps. Prove that $ST \in \LL(U,W)$ is invertible and that $(ST)^{-1} = T^{-1}S^{-1}$
+\end{problem*}
+
+\begin{proof}
+  Since $ST$ is a composition of two bijections, it is also a bijection, and hence is also a bijection. We only need to show that $(ST)^{-1} = T^{-1}S^{-1}$.
+
+  \begin{align*}
+    (T^{-1} S^{-1}) (S T) & = T^{-1} (S^{-1} S) T\\
+    & = T^{-1} I T\\
+    & = T^{-1}T = I \\
+  \end{align*}
+
+  Similarly, $(S T) (T^{-1} S^{-1}) = I$.
+\end{proof}
+
+\begin{problem*}9. Suppose $V$ is finite-dimensional and $S,T \in \LL(V)$. Prove that $ST$ is invertible if and only if both $S$ and $T$ are invertible.\end{problem*}
+
+\begin{proof}
+  The reverse direction is immediate from Problem 1. Now suppose that $ST$ is invertible. Let $v \in V$. Then $STv = v$. Hence $S$ is surjective and therefore invertible. Suppose that $Tu = Tv$. Then, $ST u = ST v$. Since $ST$ is invertible, we have $u = v$. Therefore, $T$ is injective, and since $V$ is finite dimension, $T$ is invertible. 
+\end{proof}
+
+\begin{problem*}10. Suppose $V$ is finite-dimensional and $S, T \in \LL(V)$. Prove that $ST = I$ if and only if $TS = I$\end{problem*}
+
+\begin{proof}
+  Suppose $ST = I$. Then $STv = v$. Since $V$ is finite dimensional, $S$ is invertible. Now,
+  \begin{align*}
+    I = S^{-1}S = S^{-1}(ST)S = (S^{-1}S)TS = ITS = TS
+  \end{align*}
+\end{proof}
+
+% ======================================================================
+%                       Document Ends here 
+% ======================================================================
+\end{document}
+
+
+% Local Variables:
+% compile-command: "make -k math4500_init"
+% fill-column: 80
+% comment-fill-column: 80
+% mode: latex
+% mode: reftex
+% tex-main-file: "webmail.tex"
+% End:
