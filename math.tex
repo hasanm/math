@@ -82,6 +82,28 @@
   \end{align*}
 \end{proof}
 
+
+\section{Excercise : 7.C}
+
+\begin{problem*}
+4. Suppose $T \in \LL(V,W)$ Prove that $T^*T$ is a positive operator on $V$ and $TT^*$ is a positive operator on $W$. 
+\end{problem*}
+
+\begin{proof}
+  \[
+  (T^{*}T)^* = T^*T
+  \]
+  Therefore, $T^{*}T$ is self-adjoint.
+
+  Moreover,
+  \begin{align*}
+    \langle T^{*}Tv, v \rangle & = \langle Tv, Tv \rangle\\
+    & = ||Tv||^2 \ge 0
+  \end{align*}
+
+Therefore, $T^{*}T$ is positive. 
+\end{proof}
+
 % ======================================================================
 %                       Document Ends here 
 % ======================================================================
