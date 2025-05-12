@@ -1,3 +1,8 @@
+all:
+	pdflatex -halt-on-error -file-line-error math.tex
+	pdflatex -halt-on-error -file-line-error math.tex
+	xpdf -remote doc -reload
+
 math4500_init:
 	pdflatex -halt-on-error -file-line-error math.tex
 	pdflatex -halt-on-error -file-line-error math.tex

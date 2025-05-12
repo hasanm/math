@@ -46,6 +46,81 @@
 % \input{ch-intro.tex}
 % \maketitle
 
+\chapter{Calculas on Manifolds}
+% \begin{theorem}
+% Let $O \in \mathbb{R}^{n+1}$ be open. Then $O'$ is also open in $\mathbb{R}^n$
+% where $O'$ is constructed by dropping the first co-ordinate from each element of
+% $O$.
+% \end{theorem}
+% 
+% \begin{proof}
+% Let $x'=(x_1, \ldots, x_n) \in O'$. Then for some $\alpha \in \mathbb{R}$, we
+% have $x = (\alpha, x_1, \ldots, x_n) \in O$. Then there exists an open rectangle
+% $U$ containing $x$ which is inside $O$. The same open rectangle dropping the
+% first coordinate contains $x'$. Now suppose $y' = (y_1, \ldots, y_n)$ in inside
+% this open rectangle $U'$. Pick any $\beta \in (a,b)$ where $a,b$ comes from
+% $U$'s first coordinates. Then $y = (\beta, y')$ is inside the open rectangle $U
+% \subseteq O$ for some $\beta$. Therefore, $y'$ is also in $O'$. Hence $O'$ is
+% open.
+% \end{proof}
+
+\begin{theorem}
+  Let $O \subseteq \mathbb{R}^{n+1}$ be open and $x\in \mathbb{R}$. Let's define $O'$ as follows:
+  \[
+  O' = \{(y_1, \ldots, y_n) : (x,y_1, \ldots, y_n) \in O \}
+  \]
+
+  Then $O' \subseteq \mathbb{R}^n$ is open. 
+\end{theorem}
+
+\begin{proof}
+  Let $(y_1, \ldots, y_n) \in O'$ be arbitrary. By definition, $(x, y_1, \ldots, y_n) \in O$. Since $O$ is open there is an open rectangle $U \subseteq O$. Corrsponding open rectangle $U'$ also contains our $y$. Now suppose $z \in U'$ is arbitrary. Then $(x, z_1, \ldots, z_n) \in U \subseteq O$. Therefore, $z \in O'$. Hence, $O'$ is open. 
+\end{proof}
+
+
+\begin{theorem}
+  Let $O \in \mathbb{R}^{m+n}$ be open and $x = (x_1, \ldots, x_m) \in \mathbb{R}^m$. Define
+  \[
+  O' = \{(y_1, \ldots, y_n) : (x_1, \ldots, x_m, y_1, \ldots, y_n) \in O \}
+  \]
+  Then $O'$ is also open in $\mathbb{R}^n$. 
+\end{theorem}
+
+\begin{proof}
+  Previous proof works with some slight changes. 
+\end{proof}
+
+\begin{theorem}
+If $B \subseteq \mathbb{R}^{n}$ is compact and $x \in \mathbb{R}$, then $\{x\}\times
+B \subseteq \mathbb{R}^{n+1}$ is also compact.
+\end{theorem}
+\begin{proof}
+Suppose $O$ is an open cover for $\{x\}\times B \subseteq \mathbb{R}^{n+1}$. Then we
+can construct an open cover $O'$ by having a function $f:U \to U'$ by dropping
+the first coordinate. Since $B$ is compact, there is a finite list of open sets
+$U_1', \ldots, U_2'$ that covers $B$. From this finite set we can find a finite
+cover $U_1, \ldots, U_n$ by going back pre-image by pre-image so that we contain
+$\alpha$. Hence $\{x\}\times B \in \mathbb{R}^{n+1}$ is compact.
+\end{proof}
+
+
+\begin{theorem}
+If $B \in \mathbb{R}^{m}$ is compact and $x \in \mathbb{R}^n$, then $\{x\}\times
+B \in \mathbb{R}^{n+m}$ is also compact.
+\end{theorem}
+
+\begin{proof}
+  Similar as above. 
+\end{proof}
+
+\begin{theorem}
+If $B$ is compact and $O$ is an open cover of $\{x\}\times B \in
+\mathbb{R}^{n+m}$, then there is an open set $U\in \mathbb{R}^n$ containing $x$
+such that $U \times B$ is covered by a finite number of sets in $O$.
+\end{theorem}
+
+
+
 \chapter{Linear Algebra Done right}
 
 \section{Excercise : 3.D}
