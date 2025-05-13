@@ -141,6 +141,18 @@ such that $U \times B$ is covered by a finite number of sets in $O$.
   Let $B \subseteq \mathbb{R}^n$ be compact. Boundededness of $B$ is trivial. We only have to show that $B$ is closed, we will show that $\mathbb{R}^n \setminus B$ is open. Let $p \in \mathbb{R}^n \setminus B$ be arbitrary. For each $q \in B$, we consider the open set $W_q = B_r(q, \frac{\abs{p-q}}{2})$. These consiststs of an open cover $O$ of $B$. By compactness, $W_{q_1}\ldots W_{q_m}$  covers $B$. Choose $q_i$ such that $\abs{p-q_i}$ is smallest. Then the neighbourhood $B_(p) \subseteq \mathbb{R}^n \setminus B$. Hence, $\mathbb{R}^n\setminus B$ is open. 
 \end{proof}
 
+\begin{theorem}
+1-21(a) If $A$ is closed and $x \not\in A$, prove that there is a number $d > 0$ such that $\abs{y-x} \ge d$ for all $y \in A$. 
+\end{theorem}
+
+\begin{proof}
+  Let $x \not\in A$. Since $\mathbb{R}^n \setminus A$ is open, there exists a neighborhood $B(x) \subseteq \mathbb{R}^n \setminus A$. Take $d$ as the radius of this neighborhood $B(x)$. 
+\end{proof}
+
+\begin{theorem}
+  1-21(b) If $A$ is closed, $B$ is compact, and $A \cap B = \emptyset$, prove that there is $d > 0$ such that $\abs{y-x} \ge d$ for all $y \in A$ and $x \in B$. Hint: For each $b \in B$ find an open set $U$ containing $b$ such that this relation holds for $x \in U \cap B$. 
+\end{theorem}
+
 
 
 \chapter{Linear Algebra Done right}
