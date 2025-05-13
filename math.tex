@@ -18,7 +18,8 @@
 \usepackage{tikz}
 \usetikzlibrary{intersections,arrows,decorations.pathmorphing,backgrounds,positioning,fit,calc,matrix,3d,chains,petri,through,scopes,shadows,shapes.geometric}
 \usepackage{tikz-cd}
-% \usepackage[normalem]{ulem} % for Strike out. 
+% \usepackage[normalem]{ulem} % for Strike out.
+\usepackage{physics}
 \usepackage{soul} % For Strikethrough
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{55}}%
@@ -119,6 +120,26 @@ If $B$ is compact and $O$ is an open cover of $\{x\}\times B \in
 \mathbb{R}^{n+m}$, then there is an open set $U\in \mathbb{R}^n$ containing $x$
 such that $U \times B$ is covered by a finite number of sets in $O$.
 \end{theorem}
+
+\begin{theorem}
+  If $A \subseteq \mathbb{R}^n$  and $B \subseteq \mathbb{R}^m$  are compact, then $A \times B \subseteq \mathbb{R}^{m+n}$ is compact. 
+\end{theorem}
+
+\begin{theorem}
+  $A_1 \times \cdots \times A_k$ is compact if each $A_i$ is. In particular, a closed rectangle in $\mathbb{R}^k$ is compact. 
+\end{theorem}
+
+\begin{theorem}
+  A closed bounded subset of $\mathbb{R}^n$ is compact. (The converse is also true (Problem 1-20)).
+\end{theorem}
+
+\begin{theorem}
+  Prove the converse of Corollary 1-7: A compcat subset of $\mathbb{R}^n$ is closed and bounded (see also Problem 1-28). 
+\end{theorem}
+
+\begin{proof}
+  Let $B \subseteq \mathbb{R}^n$ be compact. Boundededness of $B$ is trivial. We only have to show that $B$ is closed, we will show that $\mathbb{R}^n \setminus B$ is open. Let $p \in \mathbb{R}^n \setminus B$ be arbitrary. For each $q \in B$, we consider the open set $W_q = B_r(q, \frac{\abs{p-q}}{2})$. These consiststs of an open cover $O$ of $B$. By compactness, $W_{q_1}\ldots W_{q_m}$  covers $B$. Choose $q_i$ such that $\abs{p-q_i}$ is smallest. Then the neighbourhood $B_(p) \subseteq \mathbb{R}^n \setminus B$. Hence, $\mathbb{R}^n\setminus B$ is open. 
+\end{proof}
 
 
 
