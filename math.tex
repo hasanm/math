@@ -38,6 +38,7 @@
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 \newcommand{\LL}{\mathcal{L}}
 \newcommand{\interior}{interior}
+\newcommand{\tand}{\ \text{and} \ }
 
 % No Indent 
 \setlength\parindent{0pt}
@@ -186,6 +187,35 @@ then we still have $C \subseteq D \subseteq U$, where each $\overline{U}_{x_i}$
 is a closed neighbourhood.
 \end{proof}
 
+\begin{theorem}
+  If $A \subseteq \mathbb{R}^n$, a function $f : A \to \mathbb{R}^m$ is continuous if and only if for every open set $U \subseteq \mathbb{R}^m$ there is some open set $V\subseteq \mathbb{R}^n$ such that $f^{-1}(U) = V \cap A$
+\end{theorem}
+
+\begin{proof}
+  We prove the converse. Let $a \in A$ be arbitrary, we show that $f$ is continuos at $a$. Let $\epsilon > 0$ be arbitrary. Then the neighbourhood $B = B_{\epsilon}(f(a)) \subseteq \mathbb{R}^m$ is open. Therefore, $f^{-1}(B) = V \cap A$  for some open set $V \subseteq \mathbb{R}^n$. But then, $a \in V$ so there is an open set $B_{\delta}(a) \subseteq V$  for some $\delta > 0$. Therefore, if $x \in B_{\delta}(a)$ and $x \in A$, then $f(x) \subseteq B$. Hence $f$ is continuous at $a$.  
+\end{proof}
+
+If $A \to \mathbb{R}$ is bounded, the extent to which $f$ fails to be continuous at $a \in A$ can be measured in a precise way. For $\delta > 0$ let
+
+\begin{align*}
+  M(a,f,\delta) &= \sup \{ f(x) : x \in A \tand  \abs{x-a} < \delta \}\\
+  m(a,f,\delta) &= \inf \{ f(x) : x \in A \tand  \abs{x-a} < \delta \}\\  
+\end{align*}
+
+The oscillation $o(f,a)$ of $f$ at $a$ is defined by $o(f,a) = \displaystyle\lim_{\delta \to 0^+} [M(a,f,\delta) - m(a,f,\delta)]$
+
+\begin{theorem}
+  If $f$ is bounded, then $o(f,a) = \displaystyle\lim_{\delta \to 0^+} [M(a,f,\delta) - m(a,f,\delta)]$ always exists. 
+\end{theorem}
+
+\begin{proof}
+  Consider the sequence $M(a,f,\frac{1}{n}) - m(a,f,\frac{1}{n})$. This is a decreasing sequence which is bounded below by $0$. Therefore, there exists a limit $a \ge 0$. It is easy to show
+
+  \[
+  a = \lim_{\delta \to 0^+} [M(a,f,\delta) - m(a,f,\delta)]
+  \]
+  since $g(x) = M(a,f,x) - m(a,f,x)$ is a non-increasing function on $x > 0$. 
+\end{proof}
 % ----------------------------------------------------------------------
 %
 % ----------------------------------------------------------------------
