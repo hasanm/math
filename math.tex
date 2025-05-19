@@ -228,6 +228,24 @@ The oscillation $o(f,a)$ of $f$ at $a$ is defined by $o(f,a) = \displaystyle\lim
   \T\B $\leftarrow$ Now suppose $\lim_{x \to a} f^i(x)= b^i$ for $i = 1,\ldots, m$. Let $\epsilon > 0$ be arbitrary. Then we find $\delta_1, \ldots, \delta_m$ where each $\delta_i > 0$ such that $ \abs{f^i(x) -b^i} < \epsilon$. Taking minimum of these $\delta_i$ as $\delta$ we find that $\abs{f(x) -b } \le \sum \abs{f^i(x) -b^i} \le n\epsilon$. 
 \end{proof}
 
+\begin{exercise*}
+  1-24. Prove that $f: A \to \mathbb{R}^m$ is continuous at $a$ if and only if each $f^i$ is. 
+\end{exercise*}
+
+\begin{proof}
+  \T\B $\rightarrow$  Suppose $f : A \to \mathbb{R}^m$ is continuous at $a$. Then $\lim_{x \to a}f(x) = f(a)$ From 1-23, we see that $\lim_{x \to a}f^i(x) = f^i(a)$.  Therefore, each $f^i: A \to \mathbb{R}$ is continuous at $a \in \mathbb{R}^n$.
+
+  \T\B $\leftarrow$ Suppose each $f^i: A \to \mathbb{R}$ is continuous at $a \in A$. Then we have $\lim_{x \to a}f^i(x) = f^i(a)$. Again, using 1-23 we conclude that $\lim_{x \to a}f(x) = f(a)$. 
+\end{proof}
+
+\begin{exercise*}
+  1-25 Prove that a linear transformation $T : \mathbb{R}^n \to \mathbb{R}^m$ is continous. Hint: Use Problem 1-10.
+\end{exercise*}
+
+\begin{proof}
+  
+\end{proof}
+
 % ----------------------------------------------------------------------
 %
 % ----------------------------------------------------------------------
