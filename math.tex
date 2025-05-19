@@ -214,8 +214,20 @@ The oscillation $o(f,a)$ of $f$ at $a$ is defined by $o(f,a) = \displaystyle\lim
   \[
   a = \lim_{\delta \to 0^+} [M(a,f,\delta) - m(a,f,\delta)]
   \]
-  since $g(x) = M(a,f,x) - m(a,f,x)$ is a non-increasing function on $x > 0$. 
+  since $1g(x) = M(a,f,x) - m(a,f,x)$ is a non-increasing function on $x > 0$. 
 \end{proof}
+
+\begin{exercise*}
+  1-23 If $f : A \to \mathbb{R}^m$ and $a \in A$, show that $\lim_{x \to a} f(x) = b$ if and only if $\lim_{x \to a} f^i(x)= b^i$ for $i = 1,\ldots, m$. 
+\end{exercise*}
+
+\begin{proof}
+  \T\B $\rightarrow$ Suppose $\lim_{x \to a} f(x) = b$, then for each $\epsilon > 0$ there exists $\delta > 0$ such that if $y \in A$ and $0 < \abs{x-y} < \delta $, then $\abs{f(x) -b } < \epsilon$. Same choice of $\delta $ ensures that $\abs{f^i(x) -b^i} < \epsilon$. 
+
+
+  \T\B $\leftarrow$ Now suppose $\lim_{x \to a} f^i(x)= b^i$ for $i = 1,\ldots, m$. Let $\epsilon > 0$ be arbitrary. Then we find $\delta_1, \ldots, \delta_m$ where each $\delta_i > 0$ such that $ \abs{f^i(x) -b^i} < \epsilon$. Taking minimum of these $\delta_i$ as $\delta$ we find that $\abs{f(x) -b } \le \sum \abs{f^i(x) -b^i} \le n\epsilon$. 
+\end{proof}
+
 % ----------------------------------------------------------------------
 %
 % ----------------------------------------------------------------------
