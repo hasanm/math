@@ -243,7 +243,14 @@ The oscillation $o(f,a)$ of $f$ at $a$ is defined by $o(f,a) = \displaystyle\lim
 \end{exercise*}
 
 \begin{proof}
-  
+  We know from 1-10 that there is a $M > 0$ such that $\abs{T(h)} \le M\abs{h}$ for all $h \in \mathbb{R}^n$. Now take $\delta = \frac{\epsilon}{2M}$. Then, for any $y \in \mathbb{R}^n$ such that $\abs{x -y } < \delta$ we have (for $h = y-x$):
+  \begin{align*}
+    \abs{T(y) - T(x)} &= \abs{T(x+h) - T(x)}\\
+    &= \abs{T(x) + T(h) - T(x)} \\
+    &= \abs{T(h)}\\
+    & \le M\abs{h}\\
+    & < M \frac{\epsilon}{2M} = \epsilon
+  \end{align*}
 \end{proof}
 
 % ----------------------------------------------------------------------
