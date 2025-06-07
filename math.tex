@@ -347,7 +347,37 @@ The oscillation $o(f,a)$ of $f$ at $a$ is defined by $o(f,a) = \displaystyle\lim
     \]
 \end{proof}
 
+\begin{proof}
+  (b) \begin{align*}
+    & \lim_{(x,y) \to 0}\frac{\norm{f(a+x, y+b) - f(a,b) - f(a,y) - f(x,b)}}{\norm{(x,y)}}\\
+    = & \lim_{(x,y) \to 0}\frac{\norm{f(a,b) + f(a,y) + f(x,b) + f(x,y) - f(a,b) - f(a,y) - f(x,b)}}{\norm{(x,y)}}\\
+    = & \lim_{(x,y) \to 0}\frac{\norm{f(x,y)}}{\norm{(x,y)}} = 0\\
+  \end{align*}
 
+  We also need to show that $Dp(a,b)(x,y) = f(a,y) + f(x,b) : \mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^p$ is linear, but that is easy to show. 
+\end{proof}
+
+\begin{proof}
+  For $n = m = p = 1$, the product is bilinear, and follows from there. 
+\end{proof}
+
+\begin{problem*}
+  2-13 Define $IP : \mathbb{R}^n \times \mathbb{R}^n \to \mathbb{R}$ by $IP(x,y) = \langle x, y \rangle$.
+
+  \T\B (a) Find $D(IP)(a,b)$ and $(IP)'(a,b)$.
+
+  \T\B (b) If $f,g : \mathbb{R} \to \mathbb{R}^n$ are differentiable and $h : \mathbb{R} \to \mathbb{R}$ is defined by $h(t) = \langle f(t), g(t) \rangle$, show that
+  \[
+  h'(a) = \langle f'(a), g(a)\rangle + \langle f(a), g'(a)\rangle
+  \]
+
+  \T\B (c) If $f : \mathbb{R} \to \mathbb{R}^n$ is differentiable and $\abs{f(t)} = 1$ for all $t$, show that
+  \[
+  \langle f'(t), f(t) \rangle = 0
+  \]
+
+  \T\B (d) Exhibit a differentiable functoin $f : \mathbb{R} \to \mathbb{R}$ such that the function $\abs{f}$ defined by $\abs{f}(t) = \abs{f(t)}$ is not differentiable. 
+\end{problem*}
 
 % ----------------------------------------------------------------------
 %
