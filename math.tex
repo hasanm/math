@@ -253,6 +253,60 @@ The oscillation $o(f,a)$ of $f$ at $a$ is defined by $o(f,a) = \displaystyle\lim
   \end{align*}
 \end{proof}
 
+\section{Differentiation}
+\begin{problem*}
+  2-1. Prove that if $f : \mathbb{R}^n \to \mathbb{R}^m$ is differentiable at $a \in \mathbb{R}^n$, then it is continuous at $a$. Hint: User Problem 1-10. 
+\end{problem*}
+
+\begin{proof}
+  Since $f$ is differentiable at $a$, it is easy to show the weaker statement
+  \[
+  \lim_{h\to 0} \abs{f(a+h) - f(a) - L(h)}  = 0
+  \].
+
+  Now,
+  \begin{align*}
+    0 \le \abs{f(a+h) - f(a) } & \le \abs{f(a+h) - f(a) - L(h)} + \abs{L(h)}
+  \end{align*}
+
+  Since both of the terms on the right side goes to $0$ as $h \to 0$, it shows that $f$ is continuous at $a$. 
+\end{proof}
+
+\begin{problem*}
+  2-2. A function $f : \mathbb{R}^2 \to \mathbb{R}$ is independent of the second variable if for each $x \in \mathbb{R}$ we have $f(x, y_1) = f(x, y_2)$ for all $y_1, y_2 \in \mathbb{R}$. Show that $f$ is independent of the second variable if and only if there is a funciton $g : \mathbb{R} \to \mathbb{R}$ such that $f(x, y) = g(x)$. What is $f'(a,b$ in terms of $g'$?
+\end{problem*}
+
+\begin{proof}
+  Suppose $f$ is independent of the second variable. Define
+  \[
+  g(x) = f(x, y) 
+  \]
+  Then $g$ is well defined.
+
+  On the other hand, suppose there exists such function $g : \mathbb{R} \to \mathbb{R}$. Then $f$ is independent of the second variable. 
+\end{proof}
+
+\begin{problem*}
+  2-12: A function $f : \mathbb{R}^n \times \mathbb{R}^m$ is bilinear if for $x, x_1, x_2 \in \mathbb{R}^n$, $y, y_1, y_2 \in \mathbb{R}^m$, and $a \in \mathbb{R}$ we have
+    \begin{align*}
+    f(ax, y) &= af(x,y) = f(x, ay)\\
+    f(x_1 + x_2 , y) &= f(x_1, y) + f(x_2, y)\\
+    f(x, y_1 + y_2) &= f(x, y_1) + f(x, y_2)
+  \end{align*}
+
+    (a) Prove that if $f$ is bilinear, then
+    \[
+    \lim_{(h,k) \to 0} = \frac{\abs{f(h,k)}}{\abs{(h,k)}} = 0
+    \]
+
+    (b) Prove that $Df(a,b)(x,y) = f(a,y) + f(x,b)$.
+
+    (c) Show that the formula for $Dp(a,b)$ in Theorem 2-3 is a special case of (b). 
+      
+\end{problem*}
+
+
+
 % ----------------------------------------------------------------------
 %
 % ----------------------------------------------------------------------
@@ -293,6 +347,15 @@ The oscillation $o(f,a)$ of $f$ at $a$ is defined by $o(f,a) = \displaystyle\lim
   \end{align*}
 \end{proof}
 
+\section{Exercise: 6.A}
+\begin{problem*}
+  (29) Suppose $V_1, \ldots, V_m$ are inner product spaces. Show that the equation 
+  \[
+  \langle(u_1, \ldots, u_m), (v_1, \ldots, v_m) \rangle = \langle u_1, v_1\rangle + \cdots + \langle u_m, v_m\rangle
+  \]
+  defines an inner product on $V_1 \times \cdot \times V_m$.
+\end{problem*}
+
 
 \section{Excercise : 7.C}
 
@@ -314,6 +377,7 @@ The oscillation $o(f,a)$ of $f$ at $a$ is defined by $o(f,a) = \displaystyle\lim
 
 Therefore, $T^{*}T$ is positive. 
 \end{proof}
+
 
 % ======================================================================
 %                       Document Ends here 
