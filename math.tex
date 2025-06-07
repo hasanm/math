@@ -287,7 +287,7 @@ The oscillation $o(f,a)$ of $f$ at $a$ is defined by $o(f,a) = \displaystyle\lim
 \end{proof}
 
 \begin{problem*}
-  2-12: A function $f : \mathbb{R}^n \times \mathbb{R}^m$ is bilinear if for $x, x_1, x_2 \in \mathbb{R}^n$, $y, y_1, y_2 \in \mathbb{R}^m$, and $a \in \mathbb{R}$ we have
+  2-12: A function $f : \mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^p$ is bilinear if for $x, x_1, x_2 \in \mathbb{R}^n$, $y, y_1, y_2 \in \mathbb{R}^m$, and $a \in \mathbb{R}$ we have
     \begin{align*}
     f(ax, y) &= af(x,y) = f(x, ay)\\
     f(x_1 + x_2 , y) &= f(x_1, y) + f(x_2, y)\\
@@ -304,6 +304,48 @@ The oscillation $o(f,a)$ of $f$ at $a$ is defined by $o(f,a) = \displaystyle\lim
     (c) Show that the formula for $Dp(a,b)$ in Theorem 2-3 is a special case of (b). 
       
 \end{problem*}
+
+\begin{proof}
+  (a) We will be a little bit more verbose in our proof than the problem
+  statement, and will use \emph{norm} and \emph{absolute} value sign
+  properly. Let $e_1, \ldots, e_n$ be an orthonormal basis of $\mathbb{R}^n$,
+  and similarly $f_1, \ldots, f_m$ ben an orthonormal basis of
+  $\mathbb{R}^m$. Moreover, let $x \in \mathbb{R}^n$ and $y \in \mathbb{R}^m$
+  such that :
+  \begin{align*}
+    x& = x_1 e_1 + \cdots + x_n e_n\\
+    y& = y_1 f_1 + \cdots + y_m e_m
+  \end{align*}.
+
+  Then we have
+  \begin{align*}
+    f(x,y) & = \sum_{i=1}^n \sum_{j=1}^m x_i y_j f(e_i, f_j)
+  \end{align*}
+
+  Hence,
+    \begin{align*}
+      \norm{f(x,y)} & \le \sum_{i=1}^n \sum_{j=1}^m \abs{x_i} \abs{y_j} \norm{f(e_i, f_j)}\\
+      & \le \sum_{i=1}^n \sum_{j=1}^m \norm{x} \norm{y} \norm{f(e_i, f_j)}\\
+      & = \norm{x} \norm{y} \sum_{i=1}^n \sum_{j=1}^m  \norm{f(e_i, f_j)}\\
+      & = C \norm{x} \norm{y}
+    \end{align*}
+
+    Therefore,
+
+    \begin{align*}
+      \frac{\norm{f(h,k)}}{\norm{(h,k)}} & \le \frac{C \norm{h} \norm{k}}{\norm{(h,k)}}
+    \end{align*}
+
+    But $\norm{h} \norm{k} \le \norm{h}^2 + \norm{k}^2 = {\norm{(h,k)}}^2$. Hence.
+    \[
+      \frac{\norm{f(h,k)}}{\norm{(h,k)}} \le \frac{C \norm{h} \norm{k}}{\norm{(h,k)}} \le \frac{C \norm{(h,k)}^2}{\norm{(h,k)}} \le C \norm{(h,k)}
+      \]
+
+    Therefore,
+    \[
+    \lim_{(h,k) \to 0} \frac{\norm{f(h,k)}}{\norm{(h,k)}} = 0
+    \]
+\end{proof}
 
 
 
