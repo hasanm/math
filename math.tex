@@ -80,6 +80,39 @@
 \end{problem*}
 
 \begin{problem*}
+  Prove that
+  \begin{enumerate}
+  \item $\lim_{x \to 0^+} f(x) = \lim_{ x \to 0^-} f(-x)$.
+  \item $\lim_{x \to 0} f(\abs{x}) = \lim_{ x \to 0^+} f(x)$.
+  \item $\lim_{x \to 0} f(x^2) = \lim_{ x \to 0^+} f(x)$.
+  \end{enumerate}
+% 
+%   (These equations, and others like them, are open to several
+%   interpretations. They might mean only that the two limits are equal if they
+%   both exist; or that if a certain one of the limits exists, the other also
+%   exists and is equal to it; or that if either limit exists, then the other
+%   exists and is equal to it. Decide for yourself which interpretations are
+%   suitable).
+\end{problem*}
+
+\begin{proof}
+  \begin{enumerate}
+  \item  Let $\lim_{x \to 0^+} = l $. Now let $\epsilon > 0$ be arbitrary. Then there exists a neighbourhood $(0, \delta)$ such that if $x \in (0, \delta)$ then $\abs{f(x) -l} < \epsilon$. Let $y \in (-\delta , 0)$. Then, $\abs{F(y) - l} = \abs{f(-y) -l } < \epsilon$ , since $-y \in (0, \delta)$.
+
+    \T\B Now let $\lim_{x \to 0^-} F(x) = l$. Let $\epsilon > 0$. Then there
+    exists a neighbourhood $(\delta , 0)$ such that if $x \in (-\delta, 0)$,
+    then we have $\abs{F(x) -l } < \epsilon$. Let $y \in (0, \delta)$. Now $\abs{f(y) -l } = \abs{F(-y) -l} < \epsilon$.
+
+  \item Let $\lim_{x \to 0} f(\abs{x}) = l$. Let $\epsilon > 0$ be arbitrary. Then for some $\delta > 0$, if $ x \in (-\delta, \delta)$  and $x \ne 0$, then $\abs{F(x) -l } < \epsilon$. Now, let $y \in (0, \delta)$. Then $\abs{f(y) -l } = \abs{F(y) -l} < \epsilon$ .
+
+    \T\B On the other hand, suppose that $\lim_{x \to 0^+}f(x) = l$. Then there exists $(0, \delta)$ such that if $x \in (0, \delta)$ then $\abs{f(x) -l} < \epsilon$. Let $ y \in (-\delta, \delta) \setminus {0}$, then $\abs{y} \in (0, \delta)$. Hence $\abs{f(y) -l} = \abs{F(y) -l} < \epsilon$.
+
+    \item Let $\lim_{x \to 0}F(x) = \lim_{x \to 0}f(x^2) = l$. Then we know that $f$ is defined in $(0, \delta)$. Moreover, $\abs{F(x) -l } = \abs{f(x^2) -l } < \epsilon$ whenever $x \in (-\delta , \delta)$. Now, let $y \in (0, \delta^2)$, then $\sqrt{y} \in (0, \delta)$. Then, $\abs{f(y) -l } = \abs{f(\sqrt{y}^2) -l} = \abs{F(\sqrt{y}) - l} < \epsilon$ 
+  \end{enumerate}
+
+\end{proof}
+
+\begin{problem*}
   \T\B 5-34 Prove that $\lim_{x \to 0^+}f(\frac{1}{x}) = \lim_{x \to \infty} f(x)$
 \end{problem*}
 
