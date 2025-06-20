@@ -39,6 +39,7 @@
 \newcommand{\LL}{\mathcal{L}}
 \newcommand{\interior}{interior}
 \newcommand{\tand}{\ \text{and} \ }
+\newcommand{\ipp}[2]{\langle #1, #2 \rangle}
 
 % No Indent 
 \setlength\parindent{0pt}
@@ -49,6 +50,38 @@
 \begin{document}
 % \input{ch-intro.tex}
 % \maketitle
+
+\chapter{Calculus}
+\section{Limits}
+\begin{problem*}
+  5-9. Prove that $\lim_{x\to a} f(x) = \lim_{h \to 0}f(a+h)$. (This is mainly an exercise in understanding what the terms mean). 
+\end{problem*}
+
+\begin{proof}
+  \T\B We assume that $f$ is defined in an open neighbourhood containing $a$, but not necessarily at $a$.
+
+  \T\B Suppose $\lim_{x\to a} f(x) = l$. Let $\epsilon > 0$ be arbitrary. There exists $\delta > 0$ such that $\abs{f(x) -l } < \epsilon$ when $0 < \abs{x-a} < \delta$. Let $g(h) = f(a+h)$. Moreover, assume that $-\delta < h < \delta$ except $h \ne 0$. Then we have $a - \delta < a+h < a+\delta$, except $a+h \ne 0$. Then we have $\abs{g(h) -l  } = \abs{f(a+h) -l } <  \epsilon$. Hence $\lim_{h\to 0} g(h) = \lim_{h\to 0} f(a+h) = l$
+
+  \T\B Now suppose $\lim_{h\to 0} g(h) = \lim_{h\to 0} f(a+h) = l$. Let $\epsilon > 0$, then there exists $\delta > 0$ such that $0 < \abs{h} < \delta $, then $\abs{f(a+h) - l } <\epsilon$. Now suppose $0< \abs{x -a} < \delta$. Then we have $\abs{f(a+x -a) -l } = \abs{f(x) -l }< \epsilon$. Therefore, $\lim_{x \to a}f(x) = l$. 
+\end{proof}
+
+\begin{problem*}
+  \T\B 5-10 (a) Prove that $\lim_{x\to a}f(x) = l$ if and only if $\lim_{x \to a} f(x) -l = 0$.
+
+  \T\B(b)Prove that $\lim_{x \to 0} f(x) = \lim_{x \to a}f(x-a)$.
+
+  \T\B (c) Prove that $\lim_{x \to 0}f(x) = \lim_{x \to 0} f(x^3)$.
+
+  \T\B (d) Give an example where $\lim_{x \to 0} f(x^2) $ exists, but $\lim_{x \to 0}f(x)$ does not. 
+\end{problem*}
+
+\begin{problem*}
+  \T\B 5-14. (a) Prove that if $\lim_{x \to 0} f(x) / x = l $and $b \ne 0$, then $\lim_{x \to 0} f(bx)/x =bl$. Hint: Write $f(bx)/x = b[f(bx)/bx]$. 
+\end{problem*}
+
+\begin{problem*}
+  \T\B 5-34 Prove that $\lim_{x \to 0^+}f(\frac{1}{x}) = \lim_{x \to \infty} f(x)$
+\end{problem*}
 
 \chapter{Calculas on Manifolds}
 \section{Some proofs}
@@ -378,6 +411,44 @@ The oscillation $o(f,a)$ of $f$ at $a$ is defined by $o(f,a) = \displaystyle\lim
 
   \T\B (d) Exhibit a differentiable functoin $f : \mathbb{R} \to \mathbb{R}$ such that the function $\abs{f}$ defined by $\abs{f}(t) = \abs{f(t)}$ is not differentiable. 
 \end{problem*}
+
+\begin{proof}
+  (a) $DIP(a,b)(x,y) = \ipp{a}{y} + \ipp{x}{y}$
+\end{proof}
+
+\begin{proof}
+  (b) Let's define $s: \mathbb{R} \to \mathbb{R}^n  \times \mathbb{R}^n$ as follows:
+  \[
+  s(a) = (f(a), g(a))
+  \]
+
+  Then we have
+  \[
+  Ds(a)(x) = (xf'(a), xg'(a))
+  \]
+
+  Notice tht :
+  \[
+  h = IP \circ s
+  \]
+
+  Then by chain rule:
+  \begin{align*}
+    Dh(a)(x) &= DIP(s(a))\cdot Ds(a)(x) \\
+    &= DIP((f(a), g(a)))(xf'(a), xg'(a)) \\
+    &= \ipp{f(a)}{xg'(a)} + \ipp{xf'(a)}{g(a)}\\
+    &= \left(\ipp{f(a)}{g'(a)} + \ipp{f'(a)}{g(a)}\right) x\\
+  \end{align*}
+\end{proof}
+
+\begin{proof}
+  Let $h(t) = \ipp{f(t)}{f(t)} = \norm{f(t)} = 1$. Then we have
+  \begin{align*}
+    0 = \ipp{f'(t)}{f(t)} + \ipp{f(t)}{f'(t)}
+  \end{align*}
+
+  Therefore, $\ipp{f(t)}{f'(t)} = 0$.
+\end{proof}
 
 % ----------------------------------------------------------------------
 %
