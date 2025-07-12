@@ -31,6 +31,7 @@
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}{Proposition}
 \newtheorem*{problem*}{Problem}
+\newtheorem*{definition*}{Definition}
 \newtheorem*{exercise*}{Exercise}
 \newtheorem{lemma}{Lemma}
 \newcommand{\E}{\mathrm{E}}
@@ -80,7 +81,7 @@
 \end{problem*}
 
 \begin{problem*}
-  Prove that
+ 5-30  Prove that
   \begin{enumerate}
   \item $\lim_{x \to 0^+} f(x) = \lim_{ x \to 0^-} f(-x)$.
   \item $\lim_{x \to 0} f(\abs{x}) = \lim_{ x \to 0^+} f(x)$.
@@ -117,6 +118,31 @@
 \end{problem*}
 
 \chapter{Calculas on Manifolds}
+\section{Some definitions}
+Three books gave me three different definitions for operator norms for $T \in  \mathcal{L} (V, W)$.
+
+\begin{definition*}
+  Let $T \in \mathcal{L}(V,W)$ with $V,W$ being normed spaces. Then the operator norm $\norm{T}$ is defined as: 
+  \begin{enumerate}
+  \item $\norm{T} = \sup \{ \displaystyle\frac{\norm{Tv}}{\norm{v}} :  v \ne 0 \}$
+  \item $\norm{T} = \sup \{ \norm{Tv} :  \norm{v} = 1 \}$
+  \item $\norm{T} = \sup \{ \norm{Tv} :  \norm{v} \le 1 \}$
+  \end{enumerate}
+\end{definition*}
+
+\T\B It can be easily shown that they are all equal.
+
+\begin{theorem}
+  Show that $\norm{Tv} \le \norm{T}\ \norm{v}$.
+\end{theorem}
+
+\begin{theorem}
+  Let $S \in \mathcal{L}(U, V)$ and $T \in \mathcal{L}(V, W)$. Show that
+  \[
+  \norm{TS} \le \norm{T}\ \norm{S}
+  \]
+\end{theorem}
+
 \section{Some proofs}
 % \begin{theorem}
 % Let $O \in \mathbb{R}^{n+1}$ be open. Then $O'$ is also open in $\mathbb{R}^n$
@@ -134,6 +160,11 @@
 % \subseteq O$ for some $\beta$. Therefore, $y'$ is also in $O'$. Hence $O'$ is
 % open.
 % \end{proof}
+
+
+\begin{problem*}
+  \T 1-10 If $T: \mathbb{R}^m \to \mathbb{R}^n$ is a linear transformation, show that there is a number $M$ such that $\abs{T(h)} \le M\abs{h}$ for $h \in \mathbb{R}^m$. Hint: Estimate $\abs{T(h)}$ in terms of $\abs{h}$ and the entries in the matrix of $T$. 
+\end{problem*}
 
 \begin{theorem}
   Let $O \subseteq \mathbb{R}^{n+1}$ be open and $x\in \mathbb{R}$. Let's define $O'$ as follows:
